@@ -1,4 +1,4 @@
-use rand;
+
 trait Coordinate {
     fn scale(&mut self, scaler: f32);
     fn display(&self);
