@@ -8,9 +8,11 @@ struct RandomPoint {
     y: f32,
 }
 impl RandomPoint {
-    fn new(&mut self) {
-        self.x = rand::random();
-        self.y = rand::random();
+    fn new() -> Self {
+        Self {
+            x: rand::random(),
+            y: rand::random(),
+        }
     }
 }
 
@@ -31,9 +33,8 @@ struct StaticPoint {
 }
 
 impl StaticPoint {
-    fn new(&mut self, x: f32, y: f32) {
-        self.x = x;
-        self.y = y;
+    fn new(x: f32, y: f32) -> Self {
+        Self { x, y }
     }
 }
 
@@ -54,4 +55,10 @@ fn main() {
 
     p1.scale(10.0);
     p1.display();
+
+    let mut r1 = RandomPoint::new();
+
+    r1.display();
+    r1.scale(10.0);
+    r1.display();
 }
